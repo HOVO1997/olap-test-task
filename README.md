@@ -24,7 +24,11 @@ Then add migration !
   ```sh
   Add-Migration "migration name"
   ```
-  
+For running seeder !
+* Run seeder command
+  ```sh
+  dotnet run seeddata
+  ```
 And final step update database !
 * Database update comman
   ```sh

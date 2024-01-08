@@ -61,6 +61,7 @@ namespace olap_api.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("Value")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");

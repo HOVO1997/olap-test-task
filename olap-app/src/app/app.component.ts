@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterOutlet} from '@angular/router';
 import {MatTableModule} from "@angular/material/table";
@@ -12,6 +12,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {CountryInterface} from "./core/interfaces/country.interface";
 import {IndicatorInterface} from "./core/interfaces/indicator.interface";
 import {DataInterface} from "./core/interfaces/data.interface";
+import {MenuComponent} from "./shared/components/menu/menu.component";
 
 @Component({
   selector: 'app-root',
@@ -24,7 +25,8 @@ import {DataInterface} from "./core/interfaces/data.interface";
     MatFormFieldModule,
     MatSelectModule,
     MatButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MenuComponent
   ],
   providers: [
     DataService
@@ -66,20 +68,20 @@ export class AppComponent implements OnInit {
     });
   }
 
-  public onCountrySelect(event: MatSelectChange, element: DataInterface): void {
+  public onCountrySelect(ev: {event: MatSelectChange, element: DataInterface}): void {
     const payload = {
-      ...element,
-      countryId: event.value
+      ...ev.element,
+      countryId: ev.event.value
     }
-    this.updateData(payload, element.id);
+    this.updateData(payload, ev.element.id);
   }
 
-  public onIndicatorSelect(event: MatSelectChange, element: DataInterface): void {
+  public onIndicatorSelect(ev: {event: MatSelectChange, element: DataInterface}): void {
     const payload = {
-      ...element,
-      indicatorId: event.value
+      ...ev.element,
+      indicatorId: ev.event.value
     }
-    this.updateData(payload, element.id);
+    this.updateData(payload, ev.element.id);
   }
 
   private updateData(payload: DataInterface, id: string): void {

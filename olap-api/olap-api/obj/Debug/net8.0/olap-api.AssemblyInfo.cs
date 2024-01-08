@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("olap-api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7ae5e0e796096d4f0a0e14e9f000da197025c854")]
 [assembly: System.Reflection.AssemblyProductAttribute("olap-api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("olap-api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,0 +1,19 @@
+<span mat-menu-item [disableRipple]="true" (click)="$event.stopPropagation()">
+  <div class="country-form">
+    <mat-form-field>
+      @if (isInCountry) {
+        <mat-select [value]="element.countryId" (selectionChange)="onElementSelect($event, element)">
+          @for (country of countries; track country) {
+            <mat-option [value]="country.id">{{ country.name }}</mat-option>
+          }
+        </mat-select>
+      } @else {
+        <mat-select [value]="element.indicatorId" (selectionChange)="onElementSelect($event, element)">
+          @for (indicator of indicators; track indicator) {
+            <mat-option [value]="indicator.id">{{ indicator.name }}</mat-option>
+          }
+         </mat-select>
+      }
+    </mat-form-field>
+  </div>
+</span>

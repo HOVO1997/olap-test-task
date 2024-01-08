@@ -12,8 +12,8 @@ using olap_api.Data;
 namespace olap_api.Migrations
 {
     [DbContext(typeof(ApiDbContext))]
-    [Migration("20231226095047_initialMigration")]
-    partial class initialMigration
+    [Migration("20240108144915_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -64,6 +64,7 @@ namespace olap_api.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("Value")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");

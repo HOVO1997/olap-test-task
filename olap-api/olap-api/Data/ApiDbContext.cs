@@ -12,5 +12,10 @@ namespace olap_api.Data
         public DbSet<Indicator> Indicators { get; set; }
 
         public DbSet<DataPoint> DataPoints { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new DataPointConfiguration());
+        }
     }
 }
